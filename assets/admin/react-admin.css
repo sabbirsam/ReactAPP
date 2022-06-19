@@ -1,0 +1,48 @@
+form.react-form-group > *, label {
+    display: block;
+}
+label {
+    font-weight: bold;
+}
+
+form.react-form-group input  {
+    display: block;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    height: 30px;
+    width: 350px;
+    padding: calc(.375em - 1px) calc(.625em - 1px);
+}
+input[type="checkbox"] {
+    display: inline-block;
+    height: 15px;
+    width: 20px;
+    margin-bottom: 0;
+}
+
+
+
+button.btn.btn-primary.react-form-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button.btn.btn-primary.react-form-btn:hover {
+    background-color: #167a19; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+

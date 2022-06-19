@@ -1,0 +1,20 @@
+{
+    "name": "samiu/react-app",
+    "description": "Its for learning React with WordPress",
+    "type": "project",
+    "license": "GPL",
+    
+    "autoload": {
+        "psr-4": {
+            "Inc\\" : "./inc"
+        }
+    },
+    "authors": [
+        {
+            "name": "sabbirsam",
+            "email": "samiubat14@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
