@@ -3,25 +3,43 @@ import axios from 'axios';
 
 const Settings=()=>{
 
+    /**
+     * Save 
+     */
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [pass, setPass] = useState('');
+    const [loader, setLoader] = useState('Save Setting');
 
     const url = `${appLocalizer.apiUrl}/react_app/v1/settings`;
     
 
     const handleSubmit = (e)=>{
         e.preventDefault();
+        setLoader('Saving...');
         axios.post( url, {
             email:email,
             name:name,
             pass:pass
         })
         .then( (res)=>{
+            setLoader('Save Setting');
             console.log(res);
         } )
     }
 
+    /**
+     * Show
+     */
+
+    useEffect( ()=>{
+        axios.get( url )
+        .then( (res) =>{
+            setEmail( res.data.email );
+            setName( res.data.name );
+            setPass( res.data.pass );
+        } )
+    },[] )
 
     return(
         <React.Fragment>
@@ -41,7 +59,7 @@ const Settings=()=>{
                     <input type='password' className="form-control" id="exampleInputName" aria-describedby="NameHelp" placeholder="Enter password"  value={pass} onChange={ (e) =>{setPass(e.target.value)} }/>
                 </div>
             
-                <button type="submit" className="btn btn-primary react-form-btn">Submit</button>
+                <button type="submit" className="btn btn-primary react-form-btn">{loader}</button>
             </form>
         </React.Fragment>
     )

@@ -30095,6 +30095,10 @@ var _axios2 = _interopRequireDefault(_axios);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Settings = function Settings() {
+
+    /**
+     * Save 
+     */
     var _useState = (0, _react.useState)(''),
         _useState2 = _slicedToArray(_useState, 2),
         email = _useState2[0],
@@ -30110,18 +30114,37 @@ var Settings = function Settings() {
         pass = _useState6[0],
         setPass = _useState6[1];
 
+    var _useState7 = (0, _react.useState)('Save Setting'),
+        _useState8 = _slicedToArray(_useState7, 2),
+        loader = _useState8[0],
+        setLoader = _useState8[1];
+
     var url = appLocalizer.apiUrl + '/react_app/v1/settings';
 
     var handleSubmit = function handleSubmit(e) {
         e.preventDefault();
+        setLoader('Saving...');
         _axios2.default.post(url, {
             email: email,
             name: name,
             pass: pass
         }).then(function (res) {
+            setLoader('Save Setting');
             console.log(res);
         });
     };
+
+    /**
+     * Show
+     */
+
+    (0, _react.useEffect)(function () {
+        _axios2.default.get(url).then(function (res) {
+            setEmail(res.data.email);
+            setName(res.data.name);
+            setPass(res.data.pass);
+        });
+    }, []);
 
     return wp.element.createElement(
         _react2.default.Fragment,
@@ -30175,7 +30198,7 @@ var Settings = function Settings() {
             wp.element.createElement(
                 'button',
                 { type: 'submit', className: 'btn btn-primary react-form-btn' },
-                'Submit'
+                loader
             )
         )
     );
