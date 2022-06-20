@@ -56,7 +56,8 @@ class WP_React_Settings_Rest_Route{
     }
 
     public function save_settings_permission(){
-       return true;
+    //    return true;
+        return current_user_can('publish_posts');
     }
 
 

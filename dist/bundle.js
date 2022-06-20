@@ -30128,6 +30128,11 @@ var Settings = function Settings() {
             email: email,
             name: name,
             pass: pass
+        }, {
+            headers: {
+                'content-type': 'application/json',
+                'X-WP-NONCE': appLocalizer.nonce
+            }
         }).then(function (res) {
             setLoader('Save Setting');
             console.log(res);
