@@ -12,7 +12,7 @@ class Enqueue extends BaseController{
 
     public function admin_enqueue(){
         wp_enqueue_script( 'react-app-main-bundle', $this->plugin_url . 'dist/bundle.js',array('jquery','wp-element'),wp_rand(),true );
-        wp_localize_script( 'wp-react-kickoff', 'appLocalizer',[
+        wp_localize_script( 'react-app-main-bundle', 'appLocalizer',[
             'apiUrl' => home_url('/wp-json'),
             'nonce'=> wp_create_nonce( 'wp_rest'),
          ] );
