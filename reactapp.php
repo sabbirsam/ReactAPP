@@ -24,6 +24,7 @@ use Inc\Deactivate;
 use Inc\Enqueue;
 use Inc\AdminDashboard;
 use Inc\BaseController;
+use Inc\WP_React_Settings_Rest_Route;
 
 if(!class_exists('ReactForm')){
     class ReactForm{
@@ -49,6 +50,8 @@ if(!class_exists('ReactForm')){
             $enqueue->register();
 
             new BaseController();
+
+            new WP_React_Settings_Rest_Route();
         }
         function activate(){   
             Activate::activate();
