@@ -30168,18 +30168,6 @@ var Settings = function Settings() {
                 { className: 'form-group' },
                 wp.element.createElement(
                     'label',
-                    { htmlFor: 'ticket_close' },
-                    'Gmail:'
-                ),
-                wp.element.createElement('input', { className: 'form-control', id: 'ticket_close', 'aria-describedby': 'TicketClose', placeholder: 'Enter Close Ticket Number ', value: email, onChange: function onChange(e) {
-                        setEmail(e.target.value);
-                    } })
-            ),
-            wp.element.createElement(
-                'div',
-                { className: 'form-group' },
-                wp.element.createElement(
-                    'label',
                     { htmlFor: 'exampleInputName' },
                     'Name'
                 ),

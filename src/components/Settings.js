@@ -50,10 +50,7 @@ const Settings=()=>{
             <h2>React Form</h2>
             <form className="react-form-group" onSubmit={ (e)=> handleSubmit(e)}>
     
-                <div className="form-group">
-                    <label htmlFor="ticket_close">Gmail:</label>
-                    <input className="form-control" id="ticket_close" aria-describedby="TicketClose" placeholder="Enter Close Ticket Number " value={email} onChange={ (e) =>{setEmail(e.target.value)} } />
-                </div>
+              
                 <div className="form-group">
                     <label htmlFor="exampleInputName">Name</label>
                     <input className="form-control" id="exampleInputName" aria-describedby="NameHelp" placeholder="Enter Name" value={name} onChange={ (e) =>{setName(e.target.value)} } />
