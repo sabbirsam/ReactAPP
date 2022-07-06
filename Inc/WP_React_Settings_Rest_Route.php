@@ -59,7 +59,4 @@ class WP_React_Settings_Rest_Route{
     //    return true;
         return current_user_can('publish_posts');
     }
-
-
-
 }

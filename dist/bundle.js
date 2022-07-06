@@ -30095,7 +30095,6 @@ var _axios2 = _interopRequireDefault(_axios);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Settings = function Settings() {
-
     /**
      * Save 
      */
@@ -30169,10 +30168,10 @@ var Settings = function Settings() {
                 { className: 'form-group' },
                 wp.element.createElement(
                     'label',
-                    { htmlFor: 'exampleInputEmail1' },
-                    'Email address'
+                    { htmlFor: 'ticket_close' },
+                    'Gmail:'
                 ),
-                wp.element.createElement('input', { className: 'form-control', id: 'exampleInputEmail1', 'aria-describedby': 'emailHelp', placeholder: 'Enter email', value: email, onChange: function onChange(e) {
+                wp.element.createElement('input', { className: 'form-control', id: 'ticket_close', 'aria-describedby': 'TicketClose', placeholder: 'Enter Close Ticket Number ', value: email, onChange: function onChange(e) {
                         setEmail(e.target.value);
                     } })
             ),
